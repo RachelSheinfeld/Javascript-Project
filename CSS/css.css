@@ -1,0 +1,163 @@
+body{
+  font-family:Arial,Helvetica,sans-serif;
+  margin:0;
+  direction:rtl;
+  background-image: url(../image/screen2.png);
+}
+
+/* --- המודל (חלון קופץ) --- */
+.modal-backdrop{
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,0.45);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  z-index:9999;
+}
+.newh2{
+    text-align: center;
+    
+}
+.modal{
+  background:#8e511c;
+  border-radius:8px;
+  max-width:380px;
+  width:90%;
+  padding:24px;
+  box-shadow:0 4px 12px rgba(0,0,0,0.25);
+  position:relative;
+}
+
+.modal h2{
+  margin-top:0;
+  font-size:1.4rem;
+  text-align:center;
+}
+
+.modal button{
+  width:100%;
+  padding:10px 0;
+  margin-top:12px;
+  font-size:1rem;
+  border:none;
+  border-radius:6px;
+  cursor:pointer;
+  transition:background .2s;
+}
+
+.primary{
+  background:#eac56e;
+  color:#fff;
+}
+.primary:hover{background:#ffffff;color: black;}
+
+.secondary{
+  background:#eac56e;
+    color:#fff;
+
+}
+.secondary:hover{background:#fff; color: black;}
+
+/* כפתור סגירה */
+.close{
+  position:absolute;
+  top:8px;
+  right:8px;
+
+  /* מבטל הורשת‑רוחב ומרווח שמיישר למרכז */
+  width:auto;            /* במקום 100% */
+  padding:0;             /* או padding קטן כרצונך */
+  margin:0;
+
+  font-size:1.2rem;      /* גודל ה‑X */
+  line-height:1;         /* שלא יוסיף רווחים מיותרים */
+  background:none;
+  border:none;
+  cursor:pointer;
+  color:#666;
+  width:32px;
+
+}
+/* טופס הכניסה שמוסתר בהתחלה */
+#loginForm{
+  display:none;
+  margin-top:20px;
+}
+
+#loginForm input{
+  width:100%;
+  padding:8px;
+  margin-top:8px;
+  border:1px solid #ccc;
+  border-radius:4px;
+  font-size:1rem;
+}
+
+#loginForm .submit{
+  margin-top:14px;
+  background:#eac56e;
+  color:#fff;
+}
+#loginForm .submit:hover{background:#fff;}
+
+.new-Pop{
+  position:fixed;
+    flex-direction:column; /* שורה מתחת שורה      */
+
+  inset:0;
+  background:rgba(0,0,0,0.45);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  z-index:9999;
+}
+
+.modalNEW{
+  background:#8e511c;
+  border-radius:8px;
+  max-width:600px;
+height: 350px;
+  width:90%;
+  padding:24px;
+  box-shadow:0 4px 12px rgba(0,0,0,0.25);
+  position:relative;
+}
+
+/* השדות והכפתור בטופס */
+#loginFormNew input,
+#loginFormNew button{
+  width:100%;            /* ימלאו את רוחב ה‑modal */
+  box-sizing:border-box; /* שיקח בחשבון padding/border */
+}
+#loginFormNew input{
+  width:100%;
+  padding:8px 10px;
+  font-size:1rem;
+  border:1px solid #ccc;
+  border-radius:4px;
+
+  margin-bottom:20px;        /* יוסיף רווח מתחת לכל input */
+}
+
+#loginFormNew input:last-child{
+  margin-bottom:0;           /* שלא יהיה רווח מיותר אחרי האחרון */
+}
+/* ריווח פנימי נעים יותר לשדות */
+#loginFormNew input{
+  padding:8px 10px;
+  font-size:1rem;
+  border:1px solid #ccc;
+  border-radius:4px;
+}
+
+/* סגנון לכפתור (דוגמה) */
+#loginFormNew .submit{
+  padding:10px 0;
+  background:#eac56e;
+  color:#fff;
+  border:none;
+  border-radius:6px;
+  cursor:pointer;
+  font-size:1rem;
+}
