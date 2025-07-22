@@ -17,7 +17,7 @@ body{
 }
 .newh2{
     text-align: center;
-    
+
 }
 .modal{
   background:#8e511c;
@@ -58,6 +58,12 @@ body{
 
 }
 .secondary:hover{background:#fff; color: black;}
+.enterManager{
+  background:#eac56e;
+    color:#fff;
+
+}
+.enterManager:hover{background:#fff; color: black;}
 
 /* כפתור סגירה */
 .close{
@@ -86,7 +92,7 @@ body{
 }
 
 #loginForm input{
-  width:100%;
+  width:95%;
   padding:8px;
   margin-top:8px;
   border:1px solid #ccc;
@@ -103,7 +109,7 @@ body{
 
 .new-Pop{
   position:fixed;
-    flex-direction:column; /* שורה מתחת שורה      */
+flex-direction:column; /* שורה מתחת שורה      */
 
   inset:0;
   background:rgba(0,0,0,0.45);
@@ -117,7 +123,7 @@ body{
   background:#8e511c;
   border-radius:8px;
   max-width:600px;
-height: 350px;
+height: 380px;
   width:90%;
   padding:24px;
   box-shadow:0 4px 12px rgba(0,0,0,0.25);
@@ -161,3 +167,42 @@ height: 350px;
   cursor:pointer;
   font-size:1rem;
 }
+
+/* עיצוב טופס המנהל */
+#manager{
+  display: flex;                /* מסדר את הילדים בטור */
+  flex-direction: column;
+  gap: 12px;                    /* ← רווח אנכי בין כל האלמנטים */
+  width: 100%;
+}
+
+/* שדות קלט */
+#manager input{
+  width: 100%;
+  padding: 10px 12px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  box-sizing: border-box;
+  background: #fff;
+  text-align: right;            /* למקרה שאין dir="rtl" */
+}
+
+/* כפתור כניסה */
+#manager .submit{
+  width: 100%;
+  padding: 12px 0;
+  background: #eac56e;          /* זהב – תואם לשאר הדפים */
+  color: #fff;
+  font-weight: bold;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: .25s;
+}
+#manager .submit:hover{
+  background: #d8bc5e;
+}
+
+
+

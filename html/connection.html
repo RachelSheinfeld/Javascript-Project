@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>connection</title>
-      <link rel="stylesheet" href="../CSS/css.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>connection</title>
+  <link rel="stylesheet" href="../CSS/css.css">
 
 </head>
+
 <body>
 
 
@@ -14,28 +16,30 @@
 
 
 
-<!-- כיסוי + חלון הקופץ -->
-<div class="modal-backdrop" id="modalBackdrop">
-  <div class="modal" id="modal">
-    <button class="close" id="closeBtn" title="סגור">×</button>
-    <h2>להזמנות  התחברו</h2>
+  <!-- כיסוי + חלון הקופץ -->
+  <div class="modal-backdrop" id="modalBackdrop">
+    <div class="modal" id="modal">
+      <button class="close" id="closeBtn" title="סגור">×</button>
+      <h2>להזמנות התחברו</h2>
 
-    <!-- כפתורי בחירה -->
-    <button id="newUserBtn" class="primary">משתמש חדש</button>
-    <button id="existingUserBtn" class="secondary">משתמש קיים</button>
+      <!-- כפתורי בחירה -->
+      <button id="manager" class="enterManager">כניסה כמנהל</button>
 
-    <!-- טופס התחברות (מוסתר בהתחלה) -->
-    <form id="loginForm">
-      <input type="text" id="username" placeholder="שם משתמש" required>
-      <input type="password" id="password" placeholder="סיסמה" required>
-      <button type="submit" class="submit">התחבר</button>
-    </form>
+      <button id="newUserBtn" class="primary">משתמש חדש</button>
+      <button id="existingUserBtn" class="secondary">משתמש קיים</button>
+
+      <!-- טופס התחברות (מוסתר בהתחלה) -->
+      <form id="loginForm">
+        <input type="text" id="username" placeholder="שם משתמש" required>
+        <input type="password" id="password" placeholder="סיסמה" required>
+        <button type="submit" class="submit">התחבר</button>
+      </form>
+    </div>
   </div>
-</div>
 
 
-    
+
 </body>
-  <script src="../Javascipt/connection.js" defer></script>
+<script src="../Javascipt/connection.js" defer></script>
 
 </html>
