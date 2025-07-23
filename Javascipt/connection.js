@@ -60,7 +60,7 @@ if (signupForm) {
     );
     if (ok) {
       alert('נרשמת בהצלחה!');
-      window.location.href = 'index.html';
+      window.location.href = 'connection.html';
     }
   };
 }
@@ -103,7 +103,7 @@ if (loginForm) {
     // משתמש קיים
     const exUser = document.getElementById('username').value;
     const exPass = document.getElementById('password').value;
-    const check = checkEx(exUser.value, exPass.value);
+    const check = checkEx(exUser, exPass);
     switch (check) {
       case true:
         {
