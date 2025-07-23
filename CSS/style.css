@@ -1,0 +1,234 @@
+/* עיצוב כללי */
+body {
+    direction: rtl;
+    margin: 0;
+    font-family: 'Rubik', sans-serif;
+    background-color: #1a1a1a;
+    /* שחור עמוק */
+    color: #fff;
+}
+
+/* כותרת */
+header {
+    position: sticky;
+    top: 0;
+    width: 100%;
+    background-image: url('../image/סרגל\ למעלה.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    padding: 1rem 0;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
+}
+
+/* תפריט ניווט */
+/* תפריט ניווט כללי */
+.nav_header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 5%;
+  font-family: 'Varela Round', sans-serif;
+}
+
+/* צד ימין — קישורים */
+#rightHead {
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+}
+
+#homepaper {
+  font-size: 1.1rem;
+  color: #fff;
+  cursor: pointer;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+#homepaper:hover {
+  color: #ffd28d;
+}
+
+/* מרכז — לוגו */
+.nav_header img {
+  max-height: 100px;
+  transition: transform 0.3s ease;
+}
+
+.nav_header img:hover {
+  transform: scale(1.05);
+}
+
+/* צד שמאל — אייקונים */
+#leftHead {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+#icon {
+  position: relative;
+  cursor: pointer;
+}
+
+#icon img {
+  width: 28px;
+  height: 28px;
+  filter: brightness(0.95);
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+#icon img:hover {
+  transform: scale(1.15);
+  filter: brightness(1.2);
+}
+
+
+a{
+    text-decoration: none;
+    color: #1a1a1a;
+}
+a:hover {
+  color: #ffd28d; /* גוון זהוב נחמד */
+}
+
+
+/* אזור מוצרים */
+#container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+    padding: 2rem;
+}
+
+.product {
+    background-color: #4e342e;
+    /* חום עץ */
+    width: 300px;
+    border-radius: 12px;
+    overflow: hidden;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s ease;
+}
+
+.product:hover {
+    transform: scale(1.03);
+}
+
+/* תמונה של מנה */
+.Pimg {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-bottom: 1px solid #2a1f17;
+}
+
+/* מידע על מנה */
+.productName {
+    margin: 0.5rem;
+    font-size: 1.2rem;
+    color: #ffecd1;
+}
+
+.price {
+    margin: 0.5rem;
+    font-size: 1rem;
+    color: #ffe5b4;
+}
+
+/* כפתור הוספה לסל */
+#addToCart {
+    margin: 0.5rem;
+    padding: 0.5rem;
+    background-color: #c99b6c;
+    border: none;
+    border-radius: 4px;
+    color: #1a1a1a;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#addToCart:hover {
+    background-color: #e3b17e;
+}
+
+/* ✅ אזור סל קניות */
+.cart {
+    padding: 2rem;
+    background-color: #0d0d0d;
+    /* שחור עמוק */
+    color: #fff;
+    text-align: center;
+}
+
+.cart h2 {
+    font-size: 1.6rem;
+    margin-bottom: 2rem;
+    color: #ffe0b2;
+    border-bottom: 2px solid #4e342e;
+    display: inline-block;
+    padding-bottom: 0.5rem;
+}
+
+/* ✅ פריטי סל */
+.cartItem {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    background-color: #4e342e;
+    /* חום עץ */
+    padding: 1rem;
+    margin-bottom: 1.2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+.cartItem img {
+    border-radius: 6px;
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+}
+
+.cartItem span {
+    font-size: 1.1rem;
+    color: #ffecd1;
+    flex-grow: 1;
+    text-align: right;
+}
+
+/* ✅ אייקון מחיקה */
+.cartItem #icon img {
+    cursor: pointer;
+    width: 24px;
+    height: 24px;
+    transition: transform 0.3s ease;
+}
+
+.cartItem #icon img:hover {
+    transform: scale(1.2);
+}
+
+/* ✅ סכום כולל */
+#totalPrice {
+    font-size: 1.3rem;
+    color: #ffe5b4;
+    margin-top: 2rem;
+    font-weight: bold;
+}
+
+.fade-out {
+    opacity: 0;
+    transform: scale(0.95);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+#totalPrice {
+    text-align: center;
+    font-size: 36px;
+}

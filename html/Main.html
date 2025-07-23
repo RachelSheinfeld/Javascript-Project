@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="he">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Main</title>
+    <link rel="stylesheet" href="../CSS/style.css">
+    
+</head>
+
+<body>
+    <header>
+        <div class="header">
+
+            <div class="nav_header">
+
+                <div id="rightHead">
+                    <div id="homepaper"><a href="/HTML/Main.html">דף הבית</a></div>
+                    <div id="homepaper">קצת עלינו</div>
+                </div>
+                <div><img src="../image/לוגו בלי רקע צבע טוב.png" width="80px" height="110px"></div>
+                <div id="leftHead">
+                    <div id="icon"><a href="../HTML/cart.html"><img src="../image/shopping-cart.svg" ></a></div>
+                    <div id="icon"><img src="../image/user.svg"></div>
+                    <div id="icon"><img src="../image/heart.svg"></div>
+                    <div id="icon"><img src="../image/search.svg"></div>
+                    <div id="icon"><img src="../image/truck.svg"></div>
+                </div>
+            </div>
+
+        </div>
+    </header>
+    <main>
+        <div id="container">
+            <div class="product">
+                <div class="img">
+                    <a><img src="../image/0fe759_032bc68ff9da40d5abd7914a3da7b220~mv2.webp" width="65%" height="auto"
+                            alt="שיפודי פרגיות" class="Pimg"></a>
+                    <div>
+                        <h3 class="productName">שיפודי פרגיות</h3>
+                        <h4 class="price">130</h4>
+                    </div>
+                    <div>
+                        <button id="addToCart" onclick="addToCart(this)">הוספה לסל</button>
+                    </div>
+                </div>
+            </div>
+
+             <div class="product">
+                <div class="img">
+                    <a><img src="../image/c8fe51d99e0f4f4bb25b0f3294632dd9_56.webp" width="65%" height="auto"
+                            alt="עוף מתוק" class="Pimg"></a>
+                    <div>
+                        <h3 class="productName">עוף מתוק</h3>
+                        <h4 class="price">100</h4>
+
+                    </div>
+                    <div>
+                        <button id="addToCart" onclick="addToCart(this)">הוספה לסל</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product">
+                <div class="img">
+                    <a><img src="../image/img_3968-1008x733.jpg" width="65%" height="auto"
+                            alt="בשר בקר" class="Pimg"></a>
+                    <div>
+                        <h3 class="productName">בשר בקר</h3>
+                        <h4 class="price">40</h4>
+
+                    </div>
+                    <div>
+                        <button id="addToCart" onclick="addToCart(this)">הוספה לסל</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    
+<script src="/cart.js" defer></script>
+</body>
+
+</html>
