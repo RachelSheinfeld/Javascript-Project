@@ -3,7 +3,7 @@ const closeBth = document.getElementById('closeBtn');
 const newBtn = document.getElementById('newUserBtn');
 const existBtn = document.getElementById('existingUserBtn');
 const loginForm = document.getElementById('loginForm');
-const manager = document.getElementById('manager')
+const managerE = document.getElementById('managerbutt')
 
 if (backdrop && closeBth) {
   closeBth.onclick = () => { backdrop.style.display = 'none'; };
@@ -12,11 +12,11 @@ if (backdrop && closeBth) {
   };
 }
 /***אם הוא יכנס כמנהל שליחה לכניסה כמנהל */
-if (manager) {                       // סוגר מסולסל
-  manager.addEventListener('click', () => {
-    window.location.href = 'manager.html';  // או window.location.assign(...)
+if (managerE) {                      
+  managerE.addEventListener('click', () => {
+    window.location.href = 'manager.html';  
   });
-}                                    // סוגר מסולסל
+}                                    
 
 // משתמש חדש
 if (newBtn) {
@@ -27,7 +27,7 @@ if (existBtn && loginForm) {
   existBtn.onclick = () => {
     newBtn.style.display = 'none';
     existBtn.style.display = 'none';
-    manager.style.display='none';
+    managerE.style.display = 'none';
     loginForm.style.display = 'block';
   };
 }
@@ -101,8 +101,8 @@ if (loginForm) {
     M.preventDefault();
 
     // משתמש קיים
-    const exUser = document.getElementById('username')
-    const exPass = document.getElementById('password')
+    const exUser = document.getElementById('username').value;
+    const exPass = document.getElementById('password').value;
     const check = checkEx(exUser.value, exPass.value);
     switch (check) {
       case true:
@@ -133,14 +133,36 @@ function checkEx(exUser, exPass) {
 
   for (let i = 0; i < users.length; i++) {
 
-    if (users[i].username === exUser) {              
-      return users[i].password === exPass ? true : false;  
+    if (users[i].username === exUser) {
+      return users[i].password === exPass ? true : false;
     }
   }
 
-  return -1;                                        
+  return -1;
 }
+document.addEventListener('DOMContentLoaded', function () {
+  const form = document.getElementById('manager'); 
 
+  if (!form) return; 
 
+  form.addEventListener('submit', function (e) {
+    e.preventDefault(); 
 
+    const username = document.getElementById('usernameManager').value.trim(); 
+    const password = document.getElementById('passwordManager').value; 
+
+    if (username !== "admin") { 
+      alert("שם משתמש לא נכון"); 
+      return; 
+    }
+
+    if (password !== "1234") { 
+      alert("סיסמה שגויה"); 
+      return; 
+    }
+
+    alert("זוהית בהצלחה!"); 
+    window.location.href = "manager_Add.html";
+  });
+});
 
