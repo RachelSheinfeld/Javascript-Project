@@ -3,8 +3,7 @@ body {
     direction: rtl;
     margin: 0;
     font-family: 'Rubik', sans-serif;
-    background-color: #1a1a1a;
-    /* שחור עמוק */
+    background-color: #1a1a1a; /* שחור עמוק */
     color: #fff;
 }
 
@@ -22,77 +21,75 @@ header {
 }
 
 /* תפריט ניווט */
-/* תפריט ניווט כללי */
 .nav_header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0.5rem 5%;
-  font-family: 'Varela Round', sans-serif;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem 5%;
+    font-family: 'Varela Round', sans-serif;
 }
 
 /* צד ימין — קישורים */
 #rightHead {
-  display: flex;
-  gap: 1.5rem;
-  align-items: center;
+    display: flex;
+    gap: 1.5rem;
+    align-items: center;
 }
 
 #homepaper {
-  font-size: 1.1rem;
-  color: #fff;
-  cursor: pointer;
-  text-decoration: none;
-  transition: color 0.3s ease;
+    font-size: 1.1rem;
+    color: #fff;
+    cursor: pointer;
+    text-decoration: none;
+    transition: color 0.3s ease;
 }
 
 #homepaper:hover {
-  color: #ffd28d;
+    color: #ffd28d;
 }
 
 /* מרכז — לוגו */
 .nav_header img {
-  max-height: 100px;
-  transition: transform 0.3s ease;
+    max-height: 100px;
+    transition: transform 0.3s ease;
 }
 
 .nav_header img:hover {
-  transform: scale(1.05);
+    transform: scale(1.05);
 }
 
 /* צד שמאל — אייקונים */
 #leftHead {
-  display: flex;
-  gap: 1rem;
-  align-items: center;
+    display: flex;
+    gap: 1rem;
+    align-items: center;
 }
 
 #icon {
-  position: relative;
-  cursor: pointer;
+    position: relative;
+    cursor: pointer;
 }
 
 #icon img {
-  width: 28px;
-  height: 28px;
-  filter: brightness(0.95);
-  transition: transform 0.3s ease, filter 0.3s ease;
+    width: 28px;
+    height: 28px;
+    filter: brightness(0.95);
+    transition: transform 0.3s ease, filter 0.3s ease;
 }
 
 #icon img:hover {
-  transform: scale(1.15);
-  filter: brightness(1.2);
+    transform: scale(1.15);
+    filter: brightness(1.2);
 }
 
-
-a{
+a {
     text-decoration: none;
     color: #1a1a1a;
 }
-a:hover {
-  color: #ffd28d; /* גוון זהוב נחמד */
-}
 
+a:hover {
+    color: #ffd28d; /* גוון זהוב נחמד */
+}
 
 /* אזור מוצרים */
 #container {
@@ -104,8 +101,7 @@ a:hover {
 }
 
 .product {
-    background-color: #4e342e;
-    /* חום עץ */
+    background-color: #4e342e; /* חום עץ */
     width: 300px;
     border-radius: 12px;
     overflow: hidden;
@@ -156,11 +152,10 @@ a:hover {
     background-color: #e3b17e;
 }
 
-/* ✅ אזור סל קניות */
+/* אזור סל קניות */
 .cart {
     padding: 2rem;
-    background-color: #0d0d0d;
-    /* שחור עמוק */
+    background-color: #0d0d0d; /* שחור עמוק */
     color: #fff;
     text-align: center;
 }
@@ -174,14 +169,13 @@ a:hover {
     padding-bottom: 0.5rem;
 }
 
-/* ✅ פריטי סל */
+/* פריטי סל */
 .cartItem {
     display: flex;
     align-items: center;
     justify-content: space-between;
     gap: 1rem;
-    background-color: #4e342e;
-    /* חום עץ */
+    background-color: #4e342e; /* חום עץ */
     padding: 1rem;
     margin-bottom: 1.2rem;
     border-radius: 8px;
@@ -202,7 +196,7 @@ a:hover {
     text-align: right;
 }
 
-/* ✅ אייקון מחיקה */
+/* אייקון מחיקה */
 .cartItem #icon img {
     cursor: pointer;
     width: 24px;
@@ -214,12 +208,14 @@ a:hover {
     transform: scale(1.2);
 }
 
-/* ✅ סכום כולל */
+/* סכום כולל */
 #totalPrice {
     font-size: 1.3rem;
     color: #ffe5b4;
     margin-top: 2rem;
     font-weight: bold;
+    text-align: center;
+    font-size: 36px;
 }
 
 .fade-out {
@@ -228,7 +224,154 @@ a:hover {
     transition: opacity 0.5s ease, transform 0.5s ease;
 }
 
-#totalPrice {
+h1 {
+    color: #333;
+    margin-bottom: 30px;
+}
+
+button#checkout-btn {
+    background-color: #8B0000; /* צבע בורדו */
+    color: white;
+    padding: 12px 24px;
+    font-size: 16px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button#checkout-btn:hover {
+    background-color: #a60000;
+}
+
+.hidden {
+    display: none;
+}
+
+#popup {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(0,0,0,0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.popup-content {
+  background-color: white;
+  padding: 30px;
+  border-radius: 12px;
+  position: relative;
+  width: 400px;
+  max-width: 90%;
+  box-shadow: 0 0 20px rgba(0,0,0,0.2);
+  direction: rtl;
+}
+
+#close-btn {
+  position: absolute;
+  top: 10px;
+  left: 15px;
+  font-size: 20px;
+  font-weight: bold;
+  cursor: pointer;
+  color: #888;
+}
+
+#close-btn:hover {
+  color: #000;
+}
+
+.hidden {
+  display: none;
+}
+
+.popup-content input {
+  width: 100%;
+  margin-bottom: 12px;
+  padding: 8px;
+  font-size: 16px;
+}
+
+.popup-content button {
+  width: 100%;
+  padding: 10px;
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  font-size: 18px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.popup-content button:hover {
+  background-color: #45a049;
+}
+
+#close-btn {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    font-size: 28px;
+    cursor: pointer;
+    color: #999;
+    font-weight: 700;
+    transition: color 0.3s ease;
+}
+
+#close-btn:hover {
+    color: #b22222; /* בורדו כהה */
+}
+
+/* טופס תשלום */
+#payment-form {
+    display: flex;
+    flex-direction: column;
+    direction: rtl;
+    font-size: 14px;
+}
+
+#payment-form h2 {
+    margin-bottom: 15px;
+    color: #8B0000;
     text-align: center;
-    font-size: 36px;
+}
+
+#payment-form label {
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+#payment-form input {
+    padding: 10px 12px;
+    border: 1.5px solid #ccc;
+    border-radius: 8px;
+    font-size: 14px;
+    transition: border-color 0.3s ease;
+}
+
+#payment-form input:focus {
+    border-color: #8B0000;
+    outline: none;
+}
+
+#payment-form button {
+    margin-top: 20px;
+    padding: 14px;
+    background-color: #8B0000;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#payment-form button:hover {
+    background-color: #a60000;
 }
