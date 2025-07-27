@@ -1,14 +1,79 @@
+/* כללי גוף הדף הכללי - מוגדר פעם אחת בלבד */
 body {
   font-family: Arial, Helvetica, sans-serif;
   margin: 0;
   direction: rtl;
-  background-image: url(../image/screen2.png);
-  background-size: cover;
-  background-attachment: fixed;
-  background-color: #121212;
-  color: #f0f0f0;
+  background-image: url(../image/screen2.png); /* הרקע הקיים */
+  background-size: cover; /* מכסה את כל השטח */
+  background-attachment: fixed; /* שהרקע לא יזוז בגלילה */
+  background-color: #121212; /* צבע גיבוי לרקע */
+  color: #f0f0f0; /* צבע טקסט כללי בהיר */
   line-height: 1.6;
 }
+
+/* --- עיצובי סרגל הניווט (Header) --- */
+.header {
+  position: fixed; /* קבוע בראש הדף */
+  top: 0; /* מיושר לראש הדף */
+  width: 100%; /* רוחב מלא */
+  background-color: #1a1a1a; /* צבע רקע כהה (כמו בתמונה) */
+  color: white;
+  z-index: 1000; /* וודא שהוא מעל שאר התוכן */
+  padding: 10px 0; /* ריווח פנימי עליון ותחתון */
+  box-shadow: 0 2px 5px rgba(0,0,0,0.5); /* צל עדין */
+  display: flex; /* כדי ליישר את התוכן בתוכו */
+  justify-content: center; /* יישור מרכזי של ה-nav_header */
+  align-items: center;
+  height: 110px; /* גובה קבוע, חשוב ל-padding-top של ה-body */
+  box-sizing: border-box; /* וודא שהpadding כלול בגובה */
+}
+
+.nav_header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 1200px; /* הגבלת רוחב התוכן של הסרגל */
+  padding: 0 20px; /* ריווח מהצדדים */
+  box-sizing: border-box;
+}
+
+#rightHead, #leftHead {
+  display: flex;
+  align-items: center;
+  gap: 20px; /* רווח בין אלמנטים */
+}
+
+#homepaper a {
+  color: white;
+  text-decoration: none;
+  font-size: 1.1em;
+  transition: color 0.2s;
+}
+
+#homepaper a:hover {
+  color: #eac56e;
+}
+
+#leftHead #icon img {
+  width: 25px; /* גודל אייקונים */
+  height: 25px;
+  filter: invert(1); /* הופך אייקונים שחורים ללבנים */
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+#leftHead #icon img:hover {
+  transform: scale(1.1);
+}
+
+/* לוגו בתוך הכותרת */
+.header img {
+  width: 80px;
+  height: 110px;
+  object-fit: contain;
+}
+
 
 /* --- עיצובי המודל (חלון קופץ) וטפסים --- */
 .modal-backdrop {
@@ -237,7 +302,7 @@ body.About_body {
   font-family: Arial, sans-serif;
   line-height: 1.6;
   color: white;
-  padding-top: 100px; /* **חשוב: התאם את הערך הזה לגובה המדויק של סרגל הניווט שלך** */
+  padding-top: 120px; /* גובה ההאדר הוא 110px, אז 120px יתן מרווח 10px מהתוכן */
 }
 
 /* סגנון כללי לבלוקים המכילים את התוכן הראשי */
@@ -492,98 +557,4 @@ ul li::before {
         flex-direction: column;
         gap: 10px;
     }
-}
-/* עיצוב כללי */
-body {
-    direction: rtl;
-    margin: 0;
-    font-family: 'Rubik', sans-serif;
-    background-color: #1a1a1a;
-    /* שחור עמוק */
-    color: #fff;
-}
-
-/* כותרת */
-header {
-    position: sticky;
-    top: 0;
-    width: 100%;
-    background-image: url('../image/סרגל\ למעלה.png');
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    padding: 1rem 0;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
-}
-
-/* תפריט ניווט */
-/* תפריט ניווט כללי */
-.nav_header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0.5rem 5%;
-  font-family: 'Varela Round', sans-serif;
-}
-
-/* צד ימין — קישורים */
-#rightHead {
-  display: flex;
-  gap: 1.5rem;
-  align-items: center;
-}
-
-#homepaper {
-  font-size: 1.1rem;
-  color: #fff;
-  cursor: pointer;
-  text-decoration: none;
-  transition: color 0.3s ease;
-}
-
-#homepaper:hover {
-  color: #ffd28d;
-}
-
-/* מרכז — לוגו */
-.nav_header img {
-  max-height: 100px;
-  transition: transform 0.3s ease;
-}
-
-.nav_header img:hover {
-  transform: scale(1.05);
-}
-
-/* צד שמאל — אייקונים */
-#leftHead {
-  display: flex;
-  gap: 1rem;
-  align-items: center;
-}
-
-#icon {
-  position: relative;
-  cursor: pointer;
-}
-
-#icon img {
-  width: 28px;
-  height: 28px;
-  filter: brightness(0.95);
-  transition: transform 0.3s ease, filter 0.3s ease;
-}
-
-#icon img:hover {
-  transform: scale(1.15);
-  filter: brightness(1.2);
-}
-
-
-a{
-    text-decoration: none;
-    color: #1a1a1a;
-}
-a:hover {
-  color: #ffd28d; /* גוון זהוב נחמד */
 }
