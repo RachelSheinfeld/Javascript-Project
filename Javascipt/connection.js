@@ -60,7 +60,7 @@ if (signupForm) {
     );
     if (ok) {
       alert('נרשמת בהצלחה!');
-      window.location.href = 'index.html';
+      window.location.href = 'Main.html';
     }
   };
 }
@@ -108,7 +108,7 @@ if (loginForm) {
       case true:
         {
           alert('זוהיתם בהצלחה מייד תועברו למסך הבית');
-          window.location.href = 'index.html';
+          window.location.href = 'Main.html';
           break;
         }
       case false:

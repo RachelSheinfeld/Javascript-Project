@@ -120,7 +120,7 @@ function ToPay() {
   document.getElementById("payment-form").addEventListener("submit", (e) => {
     e.preventDefault();
     alert("התשלום התקבל בהצלחה!");
-    window.location.href = "thanks.html"; // מעבר לדף אחר
+    window.location.href = "Pay.html"; // מעבר לדף אחר
     document.getElementById("popup").classList.add("hidden");
   });
 
