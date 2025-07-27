@@ -1,183 +1,200 @@
-body{
-  font-family:Arial,Helvetica,sans-serif;
-  margin:0;
-  direction:rtl;
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  direction: rtl;
   background-image: url(../image/screen2.png);
+  background-size: cover;
+  background-attachment: fixed;
+  background-color: #121212;
+  color: #f0f0f0;
+  line-height: 1.6;
 }
 
-/* --- המודל (חלון קופץ) --- */
-.modal-backdrop{
-  position:fixed;
-  inset:0;
-  background:rgba(0,0,0,0.45);
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  z-index:9999;
-}
-.newh2{
-    text-align: center;
-
-}
-.modal{
-  background:#8e511c;
-  border-radius:8px;
-  max-width:380px;
-  width:90%;
-  padding:24px;
-  box-shadow:0 4px 12px rgba(0,0,0,0.25);
-  position:relative;
+/* --- עיצובי המודל (חלון קופץ) וטפסים --- */
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
 }
 
-.modal h2{
-  margin-top:0;
-  font-size:1.4rem;
-  text-align:center;
+.newh2 {
+  text-align: center;
 }
 
-.modal button{
-  width:100%;
-  padding:10px 0;
-  margin-top:12px;
-  font-size:1rem;
-  border:none;
-  border-radius:6px;
-  cursor:pointer;
-  transition:background .2s;
+.modal {
+  background: #8e511c;
+  border-radius: 8px;
+  max-width: 380px;
+  width: 90%;
+  padding: 24px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+  position: relative;
 }
 
-.primary{
-  background:#eac56e;
-  color:#fff;
+.modal h2 {
+  margin-top: 0;
+  font-size: 1.4rem;
+  text-align: center;
 }
-.primary:hover{background:#ffffff;color: black;}
 
-.secondary{
-  background:#eac56e;
-    color:#fff;
-
+.modal button {
+  width: 100%;
+  padding: 10px 0;
+  margin-top: 12px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background .2s;
 }
-.secondary:hover{background:#fff; color: black;}
-.enterManager{
-  background:#eac56e;
-    color:#fff;
 
+.primary {
+  background: #eac56e;
+  color: #fff;
 }
-.enterManager:hover{background:#fff; color: black;}
+
+.primary:hover {
+  background: #ffffff;
+  color: black;
+}
+
+.secondary {
+  background: #eac56e;
+  color: #fff;
+}
+
+.secondary:hover {
+  background: #fff;
+  color: black;
+}
+
+.enterManager {
+  background: #eac56e;
+  color: #fff;
+}
+
+.enterManager:hover {
+  background: #fff;
+  color: black;
+}
 
 /* כפתור סגירה */
-.close{
-  position:absolute;
-  top:8px;
-  right:8px;
-
-  /* מבטל הורשת‑רוחב ומרווח שמיישר למרכז */
-  width:auto;            /* במקום 100% */
-  padding:0;             /* או padding קטן כרצונך */
-  margin:0;
-
-  font-size:1.2rem;      /* גודל ה‑X */
-  line-height:1;         /* שלא יוסיף רווחים מיותרים */
-  background:none;
-  border:none;
-  cursor:pointer;
-  color:#666;
-  width:32px;
-
+.close {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  width: auto;
+  padding: 0;
+  margin: 0;
+  font-size: 1.2rem;
+  line-height: 1;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #666;
+  width: 32px;
 }
+
 /* טופס הכניסה שמוסתר בהתחלה */
-#loginForm{
-  display:none;
-  margin-top:20px;
+#loginForm {
+  display: none;
+  margin-top: 20px;
 }
 
-#loginForm input{
-  width:95%;
-  padding:8px;
-  margin-top:8px;
-  border:1px solid #ccc;
-  border-radius:4px;
-  font-size:1rem;
+#loginForm input {
+  width: 95%;
+  padding: 8px;
+  margin-top: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1rem;
 }
 
-#loginForm .submit{
-  margin-top:14px;
-  background:#eac56e;
-  color:#fff;
-}
-#loginForm .submit:hover{background:#fff;}
-
-.new-Pop{
-  position:fixed;
-flex-direction:column; /* שורה מתחת שורה      */
-
-  inset:0;
-  background:rgba(0,0,0,0.45);
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  z-index:9999;
+#loginForm .submit {
+  margin-top: 14px;
+  background: #eac56e;
+  color: #fff;
 }
 
-.modalNEW{
-  background:#8e511c;
-  border-radius:8px;
-  max-width:600px;
-height: 380px;
-  width:90%;
-  padding:24px;
-  box-shadow:0 4px 12px rgba(0,0,0,0.25);
-  position:relative;
+#loginForm .submit:hover {
+  background: #fff;
+}
+
+.new-Pop {
+  position: fixed;
+  flex-direction: column;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+.modalNEW {
+  background: #8e511c;
+  border-radius: 8px;
+  max-width: 600px;
+  height: 380px;
+  width: 90%;
+  padding: 24px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+  position: relative;
 }
 
 /* השדות והכפתור בטופס */
 #loginFormNew input,
-#loginFormNew button{
-  width:100%;            /* ימלאו את רוחב ה‑modal */
-  box-sizing:border-box; /* שיקח בחשבון padding/border */
-}
-#loginFormNew input{
-  width:100%;
-  padding:8px 10px;
-  font-size:1rem;
-  border:1px solid #ccc;
-  border-radius:4px;
-
-  margin-bottom:20px;        /* יוסיף רווח מתחת לכל input */
+#loginFormNew button {
+  width: 100%;
+  box-sizing: border-box;
 }
 
-#loginFormNew input:last-child{
-  margin-bottom:0;           /* שלא יהיה רווח מיותר אחרי האחרון */
+#loginFormNew input {
+  width: 100%;
+  padding: 8px 10px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-bottom: 20px;
 }
+
+#loginFormNew input:last-child {
+  margin-bottom: 0;
+}
+
 /* ריווח פנימי נעים יותר לשדות */
-#loginFormNew input{
-  padding:8px 10px;
-  font-size:1rem;
-  border:1px solid #ccc;
-  border-radius:4px;
+#loginFormNew input {
+  padding: 8px 10px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
 }
 
 /* סגנון לכפתור (דוגמה) */
-#loginFormNew .submit{
-  padding:10px 0;
-  background:#eac56e;
-  color:#fff;
-  border:none;
-  border-radius:6px;
-  cursor:pointer;
-  font-size:1rem;
+#loginFormNew .submit {
+  padding: 10px 0;
+  background: #eac56e;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1rem;
 }
 
 /* עיצוב טופס המנהל */
-#manager{
-  display: flex;                /* מסדר את הילדים בטור */
+#manager {
+  display: flex;
   flex-direction: column;
-  gap: 12px;                    /* ← רווח אנכי בין כל האלמנטים */
+  gap: 12px;
   width: 100%;
 }
 
 /* שדות קלט */
-#manager input{
+#manager input {
   width: 100%;
   padding: 10px 12px;
   font-size: 1rem;
@@ -185,14 +202,14 @@ height: 380px;
   border-radius: 6px;
   box-sizing: border-box;
   background: #fff;
-  text-align: right;            /* למקרה שאין dir="rtl" */
+  text-align: right;
 }
 
 /* כפתור כניסה */
-#manager .submit{
+#manager .submit {
   width: 100%;
   padding: 12px 0;
-  background: #eac56e;          /* זהב – תואם לשאר הדפים */
+  background: #eac56e;
   color: #fff;
   font-weight: bold;
   border: none;
@@ -200,17 +217,373 @@ height: 380px;
   cursor: pointer;
   transition: .25s;
 }
-#manager .submit:hover{
+
+#manager .submit:hover {
   background: #d8bc5e;
 }
-.ManagerD1{
-  position:fixed;
-  inset:0;
-  background:rgba(0,0,0,0.45);
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  z-index:9999;
+
+.ManagerD1 {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+/* --- סגנונות ספציפיים לדף האודות --- */
+body.About_body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  color: white;
+  padding-top: 100px; /* **חשוב: התאם את הערך הזה לגובה המדויק של סרגל הניווט שלך** */
+}
+
+/* סגנון כללי לבלוקים המכילים את התוכן הראשי */
+.about-intro-section,
+.about-content-main {
+  max-width: 900px;
+  margin: 40px auto;
+  background-color: rgba(0, 0, 0, 0.85);
+  border-radius: 10px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.6);
+  padding: 40px 50px;
+  box-sizing: border-box;
+}
+
+/* כותרת "אודות meet&meat" הראשית (H1) */
+.main-about-title {
+  color: #EAC56E;
+  text-align: center;
+  font-family: 'Georgia', serif;
+  font-size: 3em;
+  margin-bottom: 40px;
+  text-shadow: 2px 2px 5px rgba(0,0,0,0.7);
+  letter-spacing: 1.5px;
+  padding-top: 20px;
+}
+
+/* כותרות סעיפים (H2) */
+.section-title {
+  color: #D4AF37;
+  font-family: 'Georgia', serif;
+  font-size: 2.2em;
+  margin-top: 50px;
+  margin-bottom: 25px;
+  text-align: right;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+  border-bottom: 2px solid rgba(234, 197, 110, 0.4);
+  padding-bottom: 10px;
+}
+
+/* פסקאות */
+p {
+  font-family: 'Arial', sans-serif;
+  font-size: 1.15em;
+  margin-bottom: 1.5em;
+  line-height: 1.8;
+  text-align: right;
+  color: #F0F0F0;
+}
+
+/* הדגשות טקסט */
+strong {
+  color: #EAC56E;
+  font-weight: bold;
+}
+
+/* עיצוב רשימות */
+ul {
+  list-style: none;
+  padding: 0;
+  margin-top: 20px;
+}
+
+ul li {
+  font-family: 'Arial', sans-serif;
+  font-size: 1.1em;
+  margin-bottom: 15px;
+  padding-right: 35px;
+  position: relative;
+  line-height: 1.6;
+}
+
+ul li::before {
+  content: '🥩';
+  color: #EAC56E;
+  position: absolute;
+  right: 0;
+  top: 0;
+  font-size: 1.5em;
+}
+
+/* המפריד הויזואלי */
+.divider {
+  text-align: center;
+  margin: 60px auto;
+  position: relative;
+  width: 70%;
+  max-width: 600px;
+  border-top: 1px solid rgba(234, 197, 110, 0.3);
+  border-bottom: 1px solid rgba(234, 197, 110, 0.3);
+  padding: 10px 0;
+}
+
+.divider-icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(0, 0, 0, 0.9);
+  padding: 5px 15px;
+  border-radius: 5px;
+  color: #EAC56E;
+  font-size: 1.8em;
+}
+
+/* --- עיצוב הפוטר הכללי (תחתית הדף) --- */
+.contact-footer {
+    background-color: #1a1a1a;
+    color: #f0f0f0;
+    padding: 30px 0 15px 0;
+    text-align: center;
+    direction: rtl;
+    font-family: Arial, sans-serif;
+    border-top: 5px solid #2c2c2c;
+}
+
+/* קונטיינר לתוכן הראשי של הפוטר */
+.footer-content {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-bottom: 30px;
+}
+
+/* כל סעיף בפוטר (פרטים, לוגו, קישורים) */
+.footer-section {
+    flex: 1;
+    padding: 0 20px;
+    text-align: center;
+}
+
+/* סעיף פרטי יצירת קשר */
+.footer-section.contact-details {
+    text-align: right;
+    margin-left: auto;
+}
+.footer-section.contact-details p {
+    margin: 5px 0;
+    font-size: 1em;
+}
+
+/* סעיף הלוגו */
+.footer-section.footer-logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.shuchi-logo {
+    max-width: 180px;
+    height: auto;
+    filter: brightness(1.2);
+}
+
+/* סעיף הקישורים - עכשיו בשורה אחת */
+.footer-section.footer-links {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    text-align: center;
+    margin: 0 auto;
+    max-width: 700px;
+}
+
+.footer-section.footer-links ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+}
+
+.footer-section.footer-links ul li {
+    margin-bottom: 0;
+}
+
+.footer-section.footer-links ul li a {
+    color: #f0f0f0;
+    text-decoration: none;
+    font-size: 1.05em;
+    transition: color 0.2s ease-in-out;
+    white-space: nowrap;
+}
+
+.footer-section.footer-links ul li a:hover {
+    color: #eac56e;
+}
+
+/* החלק התחתון של הפוטר (Website by, נגישות) */
+.footer-bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    font-size: 0.9em;
+}
+
+.website-by .special-text {
+    font-weight: bold;
+    color: #eac56e;
+}
+
+.accessibility-statement {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.accessibility-icon {
+    width: 20px;
+    height: 20px;
+    filter: invert(1);
+}
+
+/* רספונסיביות - להתאמה למסכים קטנים */
+@media (max-width: 768px) {
+    .footer-content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer-section {
+        margin-bottom: 20px;
+        padding: 0;
+    }
+
+    .footer-section.contact-details,
+    .footer-section.footer-links {
+        text-align: center;
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    .footer-section.footer-links ul {
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    .footer-section.footer-links ul li {
+        margin-bottom: 5px;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
+/* עיצוב כללי */
+body {
+    direction: rtl;
+    margin: 0;
+    font-family: 'Rubik', sans-serif;
+    background-color: #1a1a1a;
+    /* שחור עמוק */
+    color: #fff;
+}
+
+/* כותרת */
+header {
+    position: sticky;
+    top: 0;
+    width: 100%;
+    background-image: url('../image/סרגל\ למעלה.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    padding: 1rem 0;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
+}
+
+/* תפריט ניווט */
+/* תפריט ניווט כללי */
+.nav_header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 5%;
+  font-family: 'Varela Round', sans-serif;
+}
+
+/* צד ימין — קישורים */
+#rightHead {
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+}
+
+#homepaper {
+  font-size: 1.1rem;
+  color: #fff;
+  cursor: pointer;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+#homepaper:hover {
+  color: #ffd28d;
+}
+
+/* מרכז — לוגו */
+.nav_header img {
+  max-height: 100px;
+  transition: transform 0.3s ease;
+}
+
+.nav_header img:hover {
+  transform: scale(1.05);
+}
+
+/* צד שמאל — אייקונים */
+#leftHead {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+#icon {
+  position: relative;
+  cursor: pointer;
+}
+
+#icon img {
+  width: 28px;
+  height: 28px;
+  filter: brightness(0.95);
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+#icon img:hover {
+  transform: scale(1.15);
+  filter: brightness(1.2);
 }
 
 
+a{
+    text-decoration: none;
+    color: #1a1a1a;
+}
+a:hover {
+  color: #ffd28d; /* גוון זהוב נחמד */
+}
