@@ -108,7 +108,9 @@ if (loginForm) {
       case true:
         {
           alert('זוהיתם בהצלחה מייד תועברו למסך הבית');
+          localStorage.setItem('currentUser', exUser); // זו השורה שצריך להוסיף/לוודא קיומה
           window.location.href = 'Main.html';
+
           break;
         }
       case false:
@@ -165,4 +167,19 @@ document.addEventListener('DOMContentLoaded', function () {
     window.location.href = "manager_Add.html";
   });
 });
+ 
+window.addEventListener("DOMContentLoaded",()=>{
+  const usernameOr=localStorage.getItem("currentUser")||"אורח";
+  document.getElementById("usernameOR").textContent=usernameOr;
+  // לטיםול אחכ בהזמנות של הלקוח אפשר לשנות את הקוד
+  const orders=[
+  ];
+  const list=document.getElementById("orderList")
+  orders.forEach(order=>{
+    const li=document.createElement("li")
+    li.textContent=order;
+    list.appendChild(li);
+  })
+})
+
 
