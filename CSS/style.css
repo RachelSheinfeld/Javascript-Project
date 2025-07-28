@@ -1,10 +1,31 @@
-/* עיצוב כללי */
+/* עיצוב "אצל עובד בכפר" - סגנון כפרי ישראלי */
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700&display=swap');
+
 body {
     direction: rtl;
     margin: 0;
-    font-family: 'Rubik', sans-serif;
-    background-color: #1a1a1a; /* שחור עמוק */
-    color: #fff;
+    font-family: 'Rubik', -apple-system, BlinkMacSystemFont, sans-serif;
+    background: linear-gradient(135deg, #f4f1e8 0%, #e8dcc0 100%);
+    background-attachment: fixed;
+    color: #3d2914;
+    line-height: 1.7;
+    position: relative;
+}
+
+/* טקסטורת רקע כפרית */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: 
+        radial-gradient(circle at 20px 50px, #d4c5a9 2px, transparent 2px),
+        radial-gradient(circle at 40px 80px, #c9b896 1px, transparent 1px);
+    background-size: 60px 100px;
+    opacity: 0.3;
+    z-index: -1;
 }
 
 /* כותרת */
@@ -12,12 +33,28 @@ header {
     position: sticky;
     top: 0;
     width: 100%;
-    background-image: url('../image/סרגל\ למעלה.png');
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    padding: 1rem 0;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
+    background: linear-gradient(135deg, #8b4513 0%, #a0522d 50%, #cd853f 100%);
+    border-bottom: 4px solid #654321;
+    box-shadow: 0 4px 20px rgba(101, 67, 33, 0.4);
+    z-index: 100;
+    position: relative;
+}
+
+/* דוגמת עץ בכותרת */
+header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: 
+        repeating-linear-gradient(90deg, 
+            transparent, 
+            transparent 2px, 
+            rgba(101, 67, 33, 0.1) 2px, 
+            rgba(101, 67, 33, 0.1) 4px);
+    z-index: 1;
 }
 
 /* תפריט ניווט */
@@ -25,148 +62,308 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0.5rem 5%;
-    font-family: 'Varela Round', sans-serif;
+    padding: 1.5rem 5%;
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
 }
 
 /* צד ימין — קישורים */
 #rightHead {
     display: flex;
-    gap: 1.5rem;
+    gap: 3rem;
     align-items: center;
 }
 
 #homepaper {
     font-size: 1.1rem;
-    color: #fff;
+    color: #f4f1e8;
     cursor: pointer;
     text-decoration: none;
-    transition: color 0.3s ease;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    letter-spacing: 0.5px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    padding: 8px 16px;
+    border-radius: 25px;
+    background: rgba(244, 241, 232, 0.1);
+    border: 2px solid transparent;
 }
 
 #homepaper:hover {
-    color: #ffd28d;
+    color: #ffd700;
+    background: rgba(255, 215, 0, 0.2);
+    border-color: rgba(255, 215, 0, 0.3);
+    transform: translateY(-2px);
+    text-shadow: 2px 2px 8px rgba(255, 215, 0, 0.5);
 }
 
-/* מרכז — לוגו */
+/* מרכز — לוגו */
 .nav_header img {
-    max-height: 100px;
-    transition: transform 0.3s ease;
+    max-height: 90px;
+    transition: all 0.3s ease;
+    border-radius: 50%;
+    border: 3px solid #f4f1e8;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
 }
 
 .nav_header img:hover {
     transform: scale(1.05);
+    border-color: #80632a;
+    box-shadow: 0 6px 25px rgba(255, 215, 0, 0.4);
 }
 
 /* צד שמאל — אייקונים */
 #leftHead {
     display: flex;
-    gap: 1rem;
+    gap: 1.5rem;
     align-items: center;
 }
 
 #icon {
     position: relative;
     cursor: pointer;
+    padding: 12px;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+    background: rgba(244, 241, 232, 0.1);
+    border: 2px solid rgba(244, 241, 232, 0.3);
+}
+
+#icon:hover {
+    background: rgba(255, 215, 0, 0.2);
+    border-color: rgba(255, 215, 0, 0.5);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(255, 215, 0, 0.3);
 }
 
 #icon img {
-    width: 28px;
-    height: 28px;
-    filter: brightness(0.95);
-    transition: transform 0.3s ease, filter 0.3s ease;
+    width: 26px;
+    height: 26px;
+    filter: brightness(0) saturate(100%) invert(96%) sepia(8%) saturate(463%) hue-rotate(18deg) brightness(98%) contrast(96%);
+    transition: all 0.3s ease;
 }
 
-#icon img:hover {
-    transform: scale(1.15);
-    filter: brightness(1.2);
+#icon:hover img {
+    filter: brightness(0) saturate(100%) invert(83%) sepia(69%) saturate(6436%) hue-rotate(3deg) brightness(106%) contrast(101%);
+    transform: scale(1.1);
 }
 
+/* קישורים כלליים */
 a {
     text-decoration: none;
-    color: #1a1a1a;
+    color: #3d2914;
+    transition: all 0.3s ease;
 }
 
 a:hover {
-    color: #ffd28d; /* גוון זהוב נחמד */
+    color: #8b4513;
+    text-shadow: 1px 1px 2px rgba(139, 69, 19, 0.3);
+}
+
+/* כותרת ראשית */
+h1 {
+    color: #3d2914;
+    margin: 3rem 0 2rem;
+    font-size: 3rem;
+    text-align: center;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-shadow: 3px 3px 6px rgba(139, 69, 19, 0.3);
+    font-family: 'Rubik', serif;
+    position: relative;
+}
+
+h1::after {
+    content: '🌾 תפריט הבית 🌾';
+    display: block;
+    font-size: 1.2rem;
+    font-weight: 400;
+    margin-top: 0.5rem;
+    color: #8b4513;
+    letter-spacing: 2px;
 }
 
 /* אזור מוצרים */
 #container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 2rem;
-    padding: 2rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2.5rem;
+    padding: 3rem 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
+/* כרטיס מוצר */
 .product {
-    background-color: #4e342e; /* חום עץ */
-    width: 300px;
-    border-radius: 12px;
+    background: linear-gradient(145deg, #f9f6f0 0%, #f0e6d2 100%);
+    border-radius: 20px;
     overflow: hidden;
     text-align: center;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
-    transition: transform 0.3s ease;
+    border: 3px solid #d4c5a9;
+    transition: all 0.4s ease;
+    box-shadow: 
+        0 8px 25px rgba(139, 69, 19, 0.15),
+        inset 0 1px 0 rgba(255, 255, 255, 0.6);
+    position: relative;
+}
+
+.product::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #8b4513, #cd853f, #daa520, #cd853f, #8b4513);
+    z-index: 1;
 }
 
 .product:hover {
-    transform: scale(1.03);
+    transform: translateY(-8px) rotate(1deg);
+    box-shadow: 
+        0 15px 40px rgba(139, 69, 19, 0.25),
+        inset 0 1px 0 rgba(255, 255, 255, 0.8);
+    border-color: #c9b896;
 }
 
 /* תמונה של מנה */
 .Pimg {
     width: 100%;
-    height: auto;
+    height: 220px;
     object-fit: cover;
-    border-bottom: 1px solid #2a1f17;
+    transition: all 0.4s ease;
+    border-bottom: 2px solid #d4c5a9;
+}
+
+.product:hover .Pimg {
+    transform: scale(1.05);
+    filter: brightness(1.1) saturate(1.2);
 }
 
 /* מידע על מנה */
 .productName {
-    margin: 0.5rem;
-    font-size: 1.2rem;
-    color: #ffecd1;
+    margin: 2rem 1.5rem 0.8rem;
+    font-size: 1.5rem;
+    color: #3d2914;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    text-shadow: 1px 1px 2px rgba(139, 69, 19, 0.2);
+    font-family: 'Rubik', serif;
 }
 
 .price {
-    margin: 0.5rem;
-    font-size: 1rem;
-    color: #ffe5b4;
+    margin: 0.8rem 1.5rem 2rem;
+    font-size: 1.4rem;
+    color: #8b4513;
+    font-weight: 800;
+    text-shadow: 1px 1px 2px rgba(139, 69, 19, 0.3);
+    background: linear-gradient(135deg, #e3dcb4, #a9a68a);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.price::before {
+    content: '₪';
+    margin-left: 6px;
+    color: #8b4513;
+    -webkit-text-fill-color: #8b4513;
 }
 
 /* כפתור הוספה לסל */
 #addToCart {
-    margin: 0.5rem;
-    padding: 0.5rem;
-    background-color: #c99b6c;
+    margin: 0 2rem 2rem;
+    padding: 15px 30px;
+    background: linear-gradient(135deg, #8b4513 0%, #a0522d 50%, #cd853f 100%);
     border: none;
-    border-radius: 4px;
-    color: #1a1a1a;
-    font-weight: bold;
+    border-radius: 30px;
+    color: #f4f1e8;
+    font-weight: 700;
+    font-size: 1rem;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    transition: all 0.3s ease;
+    letter-spacing: 0.5px;
+    width: calc(100% - 4rem);
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+    box-shadow: 
+        0 4px 15px rgba(139, 69, 19, 0.3),
+        inset 0 1px 0 rgba(255, 255, 255, 0.2);
+    border: 2px solid #654321;
+    position: relative;
+    overflow: hidden;
+}
+
+#addToCart::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s ease;
+}
+
+#addToCart:hover::before {
+    left: 100%;
 }
 
 #addToCart:hover {
-    background-color: #e3b17e;
+    background: linear-gradient(135deg, #a0522d 0%, #cd853f 50%, #daa520 100%);
+    transform: translateY(-3px);
+    box-shadow: 
+        0 8px 25px rgba(139, 69, 19, 0.4),
+        inset 0 1px 0 rgba(255, 255, 255, 0.3);
+    border-color: #8b4513;
+}
+
+#addToCart:active {
+    transform: translateY(-1px);
 }
 
 /* אזור סל קניות */
 .cart {
-    padding: 2rem;
-    background-color: #0d0d0d; /* שחור עמוק */
-    color: #fff;
-    text-align: center;
+    padding: 3rem 2.5rem;
+    background: linear-gradient(145deg, #f9f6f0 0%, #f0e6d2 100%);
+    color: #3d2914;
+    margin: 2rem;
+    border-radius: 25px;
+    border: 3px solid #d4c5a9;
+    box-shadow: 
+        0 8px 30px rgba(139, 69, 19, 0.2),
+        inset 0 1px 0 rgba(255, 255, 255, 0.6);
+    position: relative;
+}
+
+.cart::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #8b4513, #cd853f, #daa520, #cd853f, #8b4513);
+    border-radius: 25px 25px 0 0;
 }
 
 .cart h2 {
-    font-size: 1.6rem;
-    margin-bottom: 2rem;
-    color: #ffe0b2;
-    border-bottom: 2px solid #4e342e;
-    display: inline-block;
-    padding-bottom: 0.5rem;
+    font-size: 2.2rem;
+    margin-bottom: 2.5rem;
+    color: #3d2914;
+    font-weight: 700;
+    text-align: center;
+    letter-spacing: 1px;
+    text-shadow: 2px 2px 4px rgba(139, 69, 19, 0.3);
+    font-family: 'Rubik', serif;
+}
+
+.cart h2::after {
+    content: '🥘';
+    display: block;
+    font-size: 1.5rem;
+    margin-top: 0.5rem;
 }
 
 /* פריטי סל */
@@ -174,157 +371,207 @@ a:hover {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 1rem;
-    background-color: #4e342e; /* חום עץ */
-    padding: 1rem;
-    margin-bottom: 1.2rem;
-    border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    gap: 1.5rem;
+    background: linear-gradient(135deg, #ffffff 0%, #f9f6f0 100%);
+    padding: 2rem;
+    margin-bottom: 1.5rem;
+    border-radius: 15px;
+    border: 2px solid #e8dcc0;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(139, 69, 19, 0.1);
+}
+
+.cartItem:hover {
+    background: linear-gradient(135deg, #f9f6f0 0%, #f0e6d2 100%);
+    border-color: #d4c5a9;
+    transform: translateX(-5px);
+    box-shadow: 0 6px 20px rgba(139, 69, 19, 0.15);
 }
 
 .cartItem img {
-    border-radius: 6px;
-    width: 60px;
-    height: 60px;
+    border-radius: 12px;
+    width: 70px;
+    height: 70px;
     object-fit: cover;
+    border: 2px solid #d4c5a9;
+    box-shadow: 0 4px 10px rgba(139, 69, 19, 0.2);
 }
 
 .cartItem span {
-    font-size: 1.1rem;
-    color: #ffecd1;
+    font-size: 1.2rem;
+    color: #3d2914;
     flex-grow: 1;
     text-align: right;
+    font-weight: 600;
+    text-shadow: 1px 1px 2px rgba(139, 69, 19, 0.1);
 }
 
 /* אייקון מחיקה */
-.cartItem #icon img {
-    cursor: pointer;
-    width: 24px;
-    height: 24px;
-    transition: transform 0.3s ease;
+.cartItem #icon {
+    background: linear-gradient(135deg, #dc3545, #c82333);
+    border: none;
+    padding: 8px;
+    transition: all 0.3s ease;
 }
 
-.cartItem #icon img:hover {
-    transform: scale(1.2);
+.cartItem #icon:hover {
+    background: linear-gradient(135deg, #e74a59, #dc3545);
+    transform: scale(1.1) rotate(10deg);
+    box-shadow: 0 4px 15px rgba(220, 53, 69, 0.4);
+}
+
+.cartItem #icon img {
+    width: 22px;
+    height: 22px;
+    filter: brightness(0) saturate(100%) invert(100%);
+    border: none;
+    box-shadow: none;
 }
 
 /* סכום כולל */
 #totalPrice {
-    font-size: 1.3rem;
-    color: #ffe5b4;
-    margin-top: 2rem;
-    font-weight: bold;
+    font-size: 2.5rem;
+    color: #8b4513;
+    margin-top: 2.5rem;
+    font-weight: 800;
     text-align: center;
-    font-size: 36px;
+    padding: 2rem;
+    background: linear-gradient(135deg, #e7dda5 0%, #e0d99b 100%);
+    border-radius: 20px;
+    border: 3px solid #f8f0c5;
+    letter-spacing: 1px;
+    text-shadow: 2px 2px 4px rgba(139, 69, 19, 0.3);
+    box-shadow: 
+        0 8px 25px rgba(255, 215, 0, 0.3),
+        inset 0 2px 0 rgba(255, 255, 255, 0.4);
+    position: relative;
 }
 
-.fade-out {
-    opacity: 0;
-    transform: scale(0.95);
-    transition: opacity 0.5s ease, transform 0.5s ease;
+#totalPrice::before {
+    content: '💰 סה"כ לתשלום 💰';
+    display: block;
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: #8b4513;
+    letter-spacing: 2px;
 }
 
-h1 {
-    color: #333;
-    margin-bottom: 30px;
-}
-
+/* כפתור תשלום */
 button#checkout-btn {
-    background-color: #8B0000; /* צבע בורדו */
-    color: white;
-    padding: 12px 24px;
-    font-size: 16px;
+    background: linear-gradient(135deg, #b99552 0%, #dbae5c 50%, #e0d495 100%);
+    color: #ffffff;
+    padding: 18px 35px;
+    font-size: 1.2rem;
     border: none;
-    border-radius: 8px;
+    border-radius: 30px;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    transition: all 0.3s ease;
+    text-align: center;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+    box-shadow: 
+        0 6px 20px rgba(34, 139, 34, 0.3),
+        inset 0 1px 0 rgba(255, 255, 255, 0.2);
+    border: 2px solid #704528;
+    position: relative;
+    overflow: hidden;
+}
+
+button#checkout-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s ease;
+}
+
+button#checkout-btn:hover::before {
+    left: 100%;
 }
 
 button#checkout-btn:hover {
-    background-color: #a60000;
+    background: linear-gradient(135deg, #000000 0%, #5f440b 50%, #603b0d 100%);
+    transform: translateY(-3px);
+    box-shadow: 
+        0 10px 30px rgba(34, 139, 34, 0.4),
+        inset 0 1px 0 rgba(255, 255, 255, 0.3);
 }
 
 .hidden {
-    display: none;
+    display: none !important;
 }
 
+/* חלון קופץ */
 #popup {
-  position: fixed;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  background-color: rgba(0,0,0,0.5);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 1000;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(61, 41, 20, 0.8);
+    backdrop-filter: blur(8px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
 }
 
 .popup-content {
-  background-color: white;
-  padding: 30px;
-  border-radius: 12px;
-  position: relative;
-  width: 400px;
-  max-width: 90%;
-  box-shadow: 0 0 20px rgba(0,0,0,0.2);
-  direction: rtl;
+    background: linear-gradient(145deg, #f9f6f0 0%, #f0e6d2 100%);
+    padding: 3rem;
+    border-radius: 25px;
+    position: relative;
+    width: 450px;
+    max-width: 90%;
+    box-shadow: 
+        0 25px 70px rgba(61, 41, 20, 0.3),
+        inset 0 1px 0 rgba(255, 255, 255, 0.6);
+    direction: rtl;
+    border: 3px solid #d4c5a9;
 }
 
-#close-btn {
-  position: absolute;
-  top: 10px;
-  left: 15px;
-  font-size: 20px;
-  font-weight: bold;
-  cursor: pointer;
-  color: #888;
+.popup-content::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #8b4513, #cd853f, #daa520, #cd853f, #8b4513);
+    border-radius: 25px 25px 0 0;
 }
 
-#close-btn:hover {
-  color: #000;
-}
-
-.hidden {
-  display: none;
-}
-
-.popup-content input {
-  width: 100%;
-  margin-bottom: 12px;
-  padding: 8px;
-  font-size: 16px;
-}
-
-.popup-content button {
-  width: 100%;
-  padding: 10px;
-  background-color: #4CAF50;
-  border: none;
-  color: white;
-  font-size: 18px;
-  border-radius: 6px;
-  cursor: pointer;
-}
-
-.popup-content button:hover {
-  background-color: #45a049;
-}
-
+/* כפתור סגירה */
 #close-btn {
     position: absolute;
-    top: 12px;
-    left: 12px;
+    top: 20px;
+    left: 25px;
     font-size: 28px;
     cursor: pointer;
-    color: #999;
+    color: #8b4513;
     font-weight: 700;
-    transition: color 0.3s ease;
+    transition: all 0.3s ease;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: rgba(139, 69, 19, 0.1);
+    border: 2px solid rgba(139, 69, 19, 0.2);
 }
 
 #close-btn:hover {
-    color: #b22222; /* בורדו כהה */
+    color: #dc3545;
+    background: rgba(220, 53, 69, 0.1);
+    border-color: rgba(220, 53, 69, 0.3);
+    transform: scale(1.1) rotate(90deg);
+    box-shadow: 0 4px 15px rgba(220, 53, 69, 0.2);
 }
 
 /* טופס תשלום */
@@ -332,46 +579,213 @@ button#checkout-btn:hover {
     display: flex;
     flex-direction: column;
     direction: rtl;
-    font-size: 14px;
 }
 
 #payment-form h2 {
-    margin-bottom: 15px;
-    color: #8B0000;
+    margin-bottom: 2rem;
+    color: #3d2914;
     text-align: center;
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    text-shadow: 2px 2px 4px rgba(139, 69, 19, 0.2);
+    font-family: 'Rubik', serif;
+}
+
+#payment-form h2::after {
+    content: '💳';
+    display: block;
+    font-size: 1.5rem;
+    margin-top: 0.5rem;
 }
 
 #payment-form label {
     font-weight: 600;
-    margin-bottom: 5px;
+    margin-bottom: 0.8rem;
+    color: #3d2914;
+    font-size: 1rem;
+    text-shadow: 1px 1px 2px rgba(139, 69, 19, 0.1);
 }
 
 #payment-form input {
-    padding: 10px 12px;
-    border: 1.5px solid #ccc;
-    border-radius: 8px;
-    font-size: 14px;
-    transition: border-color 0.3s ease;
+    padding: 15px 18px;
+    border: 2px solid #d4c5a9;
+    border-radius: 15px;
+    font-size: 1.1rem;
+    background: linear-gradient(135deg, #ffffff 0%, #f9f6f0 100%);
+    transition: all 0.3s ease;
+    margin-bottom: 1.5rem;
+    box-shadow: inset 0 2px 5px rgba(139, 69, 19, 0.1);
 }
 
 #payment-form input:focus {
-    border-color: #8B0000;
+    border-color: #8b4513;
     outline: none;
+    box-shadow: 
+        0 0 0 4px rgba(139, 69, 19, 0.2),
+        inset 0 2px 5px rgba(139, 69, 19, 0.1);
+    background: #ffffff;
 }
 
 #payment-form button {
-    margin-top: 20px;
-    padding: 14px;
-    background-color: #8B0000;
-    color: white;
+    margin-top: 1.5rem;
+    padding: 18px;
+    background: linear-gradient(135deg, #8b4513 0%, #a0522d 50%, #cd853f 100%);
+    color: #f4f1e8;
     border: none;
-    border-radius: 10px;
-    font-size: 16px;
-    font-weight: 600;
+    border-radius: 20px;
+    font-size: 1.2rem;
+    font-weight: 700;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    letter-spacing: 0.5px;
+    transition: all 0.3s ease;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+    box-shadow: 
+        0 6px 20px rgba(139, 69, 19, 0.3),
+        inset 0 1px 0 rgba(255, 255, 255, 0.2);
+    border: 2px solid #654321;
 }
 
 #payment-form button:hover {
-    background-color: #a60000;
+    background: linear-gradient(135deg, #a0522d 0%, #cd853f 50%, #daa520 100%);
+    transform: translateY(-3px);
+    box-shadow: 
+        0 10px 30px rgba(139, 69, 19, 0.4),
+        inset 0 1px 0 rgba(255, 255, 255, 0.3);
+}
+
+#popupdel {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(61, 41, 20, 0.8);
+    backdrop-filter: blur(8px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+/* אנימציות כפריות */
+@keyframes rustleLeaves {
+    0%, 100% { transform: rotate(0deg); }
+    25% { transform: rotate(1deg); }
+    75% { transform: rotate(-1deg); }
+}
+
+.product:hover {
+    animation: rustleLeaves 2s ease-in-out infinite;
+}
+
+/* אנימציה לכפתורים */
+@keyframes glow {
+    0%, 100% { box-shadow: 0 6px 20px rgba(139, 69, 19, 0.3); }
+    50% { box-shadow: 0 6px 25px rgba(255, 215, 0, 0.4); }
+}
+
+#addToCart:hover,
+button#checkout-btn:hover {
+    animation: glow 2s ease-in-out infinite;
+}
+
+/* אנימציות מיוחדות */
+.fade-out {
+    opacity: 0;
+    transform: translateY(15px) rotate(-2deg);
+    transition: all 0.4s ease;
+}
+
+/* רספונסיבי */
+@media (max-width: 768px) {
+    .nav_header {
+        padding: 1rem 4%;
+        flex-wrap: wrap;
+        gap: 1rem;
+    }
+    
+    .nav_header img {
+        max-height: 70px;
+    }
+    
+    #rightHead {
+        gap: 2rem;
+    }
+    
+    #homepaper {
+        font-size: 1rem;
+        padding: 6px 12px;
+    }
+    
+    h1 {
+        font-size: 2.2rem;
+        margin: 2rem 0 1.5rem;
+    }
+    
+    #container {
+        grid-template-columns: 1fr;
+        padding: 2rem 1rem;
+        gap: 2rem;
+    }
+    
+    .product {
+        max-width: 400px;
+        margin: 0 auto;
+    }
+    
+    .cart {
+        margin: 1rem;
+        padding: 2rem 1.5rem;
+    }
+    
+    .popup-content {
+        width: 95%;
+        padding: 2rem 1.5rem;
+    }
+    
+    #totalPrice {
+        font-size: 2rem;
+        padding: 1.5rem;
+    }
+    
+    .cart h2 {
+        font-size: 1.8rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .nav_header {
+        padding: 0.8rem 3%;
+    }
+    
+    #rightHead {
+        gap: 1rem;
+    }
+    
+    #leftHead {
+        gap: 0.8rem;
+    }
+    
+    h1 {
+        font-size: 1.8rem;
+    }
+    
+    #container {
+        padding: 1.5rem 0.8rem;
+    }
+    
+    .cartItem {
+        padding: 1.5rem;
+        flex-wrap: wrap;
+        text-align: center;
+    }
+    
+    .popup-content {
+        padding: 1.5rem 1rem;
+    }
+    
+    #totalPrice {
+        font-size: 1.8rem;
+    }
 }
