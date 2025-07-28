@@ -171,38 +171,33 @@ document.addEventListener('DOMContentLoaded', function () {
 window.addEventListener("DOMContentLoaded", () => {
     // משיכת שם המשתמש מ-localStorage, אם קיים. אם לא, מציג "אורח".
     const usernameOr = localStorage.getItem("currentUser") || "אורח";
-    const usernameOrElement = document.getElementById("usernameOR"); // קבלת האלמנט פעם אחת
-    usernameOrElement.textContent = usernameOr;
+    // הצבת שם המשתמש או "אורח" בתוך האלמנט עם ה-ID "usernameOR".
+    document.getElementById("usernameOR").textContent = usernameOr;
 
-    const orders = [
-        // מערך ההזמנות שלך, אם קיים, ילך לכאן
-    ];
-
-    const list = document.getElementById("orderList");
-    orders.forEach(order => {
-        const li = document.createElement("li");
-        li.textContent = order;
-        list.appendChild(li);
-    });
-
-    // --- לוגיקת התנתקות/הפניה חדשה ---
-    // קבלת דיב הכותרת של המשתמש, או ישירות את הספאן של האייקון/שם המשתמש
+    // קבלת דיב הכותרת של המשתמש (זה שמכיל את האייקון ושם המשתמש).
     const userHeader = document.getElementById("userHeader");
-    if (userHeader) {
-        userHeader.style.cursor = "pointer"; // הפוך את הסמן ליד כדי שיהיה ברור שזה לחיץ
 
+    // ודא שהאלמנט userHeader קיים בדף לפני שמנסים לצרף לו מאזין אירועים.
+    if (userHeader) {
+        // הופך את סמן העכבר ליד כדי להעיד שהאלמנט לחיץ.
+        userHeader.style.cursor = "pointer";
+
+        // הוספת מאזין אירועים ללחיצה על האלמנט.
         userHeader.addEventListener("click", () => {
-            if (localStorage.getItem("currentUser")) { // אם משתמש מחובר
-                const confirmLogout = confirm("האם ברצונך להתנתק?"); // שאל אישור
+            // בדיקה אם משתמש מחובר (על ידי בדיקת קיום "currentUser" ב-localStorage).
+            if (localStorage.getItem("currentUser")) {
+                // הצגת חלון אישור לשאול אם המשתמש רוצה להתנתק.
+                const confirmLogout = confirm("האם ברצונך להתנתק?");
+                // אם המשתמש אישר:
                 if (confirmLogout) {
-                    localStorage.removeItem("currentUser"); // נקה את נתוני המשתמש (שם המשתמש)
-                    // אופציונלי, נקה נתונים ספציפיים אחרים למשתמש מ-localStorage אם קיימים
-                    // localStorage.removeItem("userOrders");
+                    // מחיקת נתוני המשתמש מ-localStorage (בפועל, ניתוק).
+                    localStorage.removeItem("currentUser");
                     alert("התנתקת בהצלחה.");
-                    window.location.href = "connection.html"; // הפנה לדף ההתחברות
+                    // הפנייה לדף ההתחברות.
+                    window.location.href = "connection.html";
                 }
-            } else { // אם אין משתמש מחובר (usernameOr הוא "אורח")
-                window.location.href = "connection.html"; // הפנה ישירות לדף ההתחברות
+            } else {
+                window.location.href = "connection.html";
             }
         });
     }
