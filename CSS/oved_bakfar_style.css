@@ -1,16 +1,5 @@
 /* עיצוב בהשראת "עובד בכפר" - צבעי אבן וחום טבעיים */
 
-/* צבעי בסיס:
-   --stone-light: #D4C4A8 (אבן בהירה)
-   --stone-medium: #B8A082 (אבן בינונית)
-   --stone-dark: #8D7B68 (אבן כהה)
-   --earth-brown: #7A6B5D (חום אדמה)
-   --warm-brown: #6B5D52 (חום חם)
-   --accent-orange: #C4915C (כתום חם)
-   --cream: #F5F1E8 (קרם)
-   --dark-text: #3D3528 (טקסט כהה)
-*/
-
 :root {
     --stone-light: #D4C4A8;
     --stone-medium: #B8A082;
@@ -1093,3 +1082,14 @@ button#checkout-btn:hover {
 }
 
 
+#cart-count {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  background: red;
+  color: white;
+  font-size: 12px;
+  font-weight: bold;
+  padding: 2px 6px;
+  border-radius: 50%;
+}

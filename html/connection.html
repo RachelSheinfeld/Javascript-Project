@@ -1,75 +1,69 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="he">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>connection</title>
-  <link rel="stylesheet" href="../CSS/css.css">
-      <link rel="stylesheet" href="../CSS/style.css">
-                      <link rel="stylesheet" href="../CSS/oved_bakfar_style.css">
-
-
-
-
+  <link rel="stylesheet" href="../CSS/oved_bakfar_style.css">
 </head>
-
 <body>
 
-<header>
-        <div class="header">
-
-            <div class="nav_header">
-
-                <div id="rightHead">
-                    <div id="homepaper"><a href="../html/Main.html">דף הבית</a></div>
-                    <div id="homepaper"><a href="../html/About1.html">קצת עלינו</a> </div>
-                </div>
-                <div><img src="../image/לוגו בלי רקע צבע טוב.png" width="80px" height="110px"></div>
-                <div id="leftHead">
-
-                   
-                    <div id="icon"><a href="../HTML/cart.html"><img src="../image/shopping-cart.svg"></a></div>
-                     <div id="icon" class="icont"><img src="../image/truck.svg"></div>
-                    <div id="userHeader">
-                        <div id="icon"><a href="../html/orders.html"></a><img src="../image/user.svg"></div>
-                        <span id="usernameOR"></span>
-                    </div>
-                </div>
-            </div>
-
+  <header>
+    <div class="header">
+      <div class="nav_header">
+        <div id="rightHead">
+          <div id="homepaper"><a href="../html/Main.html">דף הבית</a></div>
+          <div id="homepaper"><a href="../html/About1.html">קצת עלינו</a></div>
         </div>
-    </header>
+        <div><img src="../image/לוגו בלי רקע צבע טוב.png" width="80px" height="110px"></div>
+        <div id="leftHead">
+          <div id="icon"><a href="../HTML/cart.html"><img src="../image/shopping-cart.svg"></a></div>
+          <div id="icon" class="icont"><img src="../image/truck.svg"></div>
+          <div id="userHeader">
+            <div id="icon"><a href="../html/orders.html"></a><img src="../image/user.svg"></div>
+            <span id="usernameOR"></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
 
-
-
-
-
-  <!-- כיסוי + חלון הקופץ -->
   <div class="modal-backdrop" id="modalBackdrop">
     <div class="modal" id="modal">
-      <button class="close" id="closeBtn" title="סגור" onclick=" login()">×</button>
+      <button class="close" id="closeBtn" title="סגור">×</button>
       <h2>להזמנות התחברו</h2>
 
       <!-- כפתורי בחירה -->
       <button id="managerbutt" class="enterManager">כניסה כמנהל</button>
-
       <button id="newUserBtn" class="primary">משתמש חדש</button>
       <button id="existingUserBtn" class="secondary">משתמש קיים</button>
 
-      <!-- טופס התחברות (מוסתר בהתחלה) -->
-
-      <form id="loginForm">
+      <!-- טופס התחברות למשתמש קיים -->
+      <form id="loginForm" style="display:none;">
         <input type="text" id="username" placeholder="שם משתמש" required>
         <input type="password" id="password" placeholder="סיסמה" required>
         <button type="submit" class="submit">התחבר</button>
       </form>
+
+        <!-- טופס התחברות למשתמש חדש -->
+      <form id="loginForm" style="display:none;">
+        <input type="text" id="username" placeholder="שם משתמש" required>
+        <input type="password" id="password" placeholder="סיסמה" required>
+        <button type="submit" class="submit">התחבר</button>
+      </form>
+
+      <!-- טופס התחברות למנהל -->
+      <form id="manager" style="display:none;">
+        <input type="text" id="usernameManager" placeholder="שם משתמש מנהל" required>
+        <input type="password" id="passwordManager" placeholder="סיסמה" required>
+        <button type="submit" class="submit">התחבר כמנהל</button>
+      </form>
+
     </div>
   </div>
 
-
+  <script src="../Javascipt/cart.js" defer></script>
+  <script src="../Javascipt/connection.js" defer></script>
 
 </body>
-<script src="../Javascipt/connection.js" defer></script>
-
 </html>

@@ -1,6 +1,13 @@
 let cart = JSON.parse(sessionStorage.getItem('cart')) || [];
+let cartCount = sessionStorage.getItem("cartCount")
+  ? parseInt(sessionStorage.getItem("cartCount"))
+  : 0;
+
 
 function addToCart(button) {
+  cartCount++;
+  document.getElementById("cart-count").textContent = cartCount;
+  sessionStorage.setItem("cartCount", cartCount);
   const productDiv = button.closest('.product');
   const name = productDiv.querySelector('.productName').innerText
   const price = parseFloat(productDiv.querySelector('.price').innerText)
@@ -33,7 +40,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 document.addEventListener('DOMContentLoaded', () => {
   updateTotals();
-  const cart = JSON.parse(sessionStorage.getItem('cart')) || []; // שחק את העגלה מה-local storage, או ריק
+  const cart = JSON.parse(sessionStorage.getItem('cart')) || [];
   const cartItemsContainer = document.getElementById('cartItems');
   if (cartItemsContainer) {
     cartItemsContainer.innerHTML = ''; // לנקות את התצוגה הקודמת
@@ -50,18 +57,22 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 });
 
-document.addEventListener('click', function (e) {
-  const itemId = e.target.dataset.id;
-  deleteItem(itemId);
+document.addEventListener('click', (e) => {
+  if (e.target.dataset.id) {
+    deleteItem(e.target.dataset.id);
+  }
 });
 
+
 function deleteItem(itemId) {
+  cartCount--;
+  document.getElementById("cart-count").textContent = cartCount;
+  sessionStorage.setItem("cartCount", cartCount);
   let cart = JSON.parse(sessionStorage.getItem('cart')) || [];
   cart = cart.filter(product => product.id != parseFloat(itemId));
   sessionStorage.setItem('cart', JSON.stringify(cart));
   const total = cart.reduce((sum, product) => sum + product.price, 0);
   document.getElementById('totalPrice').innerText = "סה״כ לתשלום: " + total + " ₪"
-  // מציאת האלמנט DOM עם המזהה המתאים
   const allItems = document.querySelectorAll('[data-id]');
   allItems.forEach(img => {
     if (parseFloat(img.dataset.id) === parseFloat(itemId)) {
@@ -71,7 +82,7 @@ function deleteItem(itemId) {
       // מחיקה לאחר סיום האנימציה
       setTimeout(() => {
         cartItem.remove();
-      }, 500); // תואם ל־transition של CSS
+      }, 500);
     }
   });
 
@@ -81,8 +92,6 @@ const checkoutBtn = document.getElementById("checkout-btn");
 if (checkoutBtn) {
   checkoutBtn.addEventListener("click", ToPay);
 }
-
-// document.getElementById("checkout-btn").addEventListener("click", ToPay);
 
 function ToPay() {
   if (document.getElementById("popup")) {
@@ -132,7 +141,13 @@ function ToPay() {
   document.getElementById("payment-form").addEventListener("submit", (e) => {
     e.preventDefault();
     alert("התשלום התקבל בהצלחה!");
+    sessionStorage.removeItem('cart');
+    sessionStorage.setItem("cartCount", 0);
+    cart = [];
+    cartCount = 0;
+    document.getElementById("cart-count").textContent = cartCount;
     window.location.href = "Main.html"; // מעבר לדף אחר
+
     document.getElementById("popup").classList.add("hidden");
   });
 
@@ -247,18 +262,20 @@ function addNewProduct() {
     price: price,
     imageUrl: imageUrl
   };
+  // ניקוי השדות
+  document.getElementById("inputProductName").value = "";
+  document.getElementById("inputProductPrice").value = "";
+  document.getElementById("inputProductImage").value = "";
+
+  alert("המוצר נוסף בהצלחה!")
+  window.location.href = "Main.html"
 
   pro.push(obj);
   localStorage.setItem('pro', JSON.stringify(pro));
 
   addProductToDOM(obj);
 
-  // ניקוי השדות
-  document.getElementById("inputProductName").value = "";
-  document.getElementById("inputProductPrice").value = "";
-  document.getElementById("inputProductImage").value = "";
 
-  window.location.href="Main.html"
 }
 
 function addProductToDOM(product) {
@@ -273,7 +290,7 @@ function addProductToDOM(product) {
           <h4 class="price">${product.price}</h4>
         </div>
         <div>
-          <button onclick="addToCart(this)">הוספה לסל</button>
+          <button id="addToCart" onclick="addToCart(this)">הוספה לסל</button>
         </div>
       </div>
     </div>`;

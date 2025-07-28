@@ -5,29 +5,31 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cart</title>
-    <link rel="stylesheet" href="../CSS/style.css">
-                    <link rel="stylesheet" href="../CSS/oved_bakfar_style.css">
+    <link rel="stylesheet" href="../CSS/oved_bakfar_style.css">
 
-
+</head>
 
 <body>
-       <header>
+    <header>
         <div class="header">
 
             <div class="nav_header">
 
                 <div id="rightHead">
                     <div id="homepaper"><a href="../html/Main.html">דף הבית</a></div>
-                     <div id="homepaper"><a href="../html/About1.html">קצת עלינו</a> </div>
+                    <div id="homepaper"><a href="../html/About1.html">קצת עלינו</a> </div>
                 </div>
                 <div><img src="../image/לוגו בלי רקע צבע טוב.png" width="80px" height="110px"></div>
                 <div id="leftHead">
-                    <div id="icon"><a href="../HTML/cart.html"><img src="../image/shopping-cart.svg" ></a></div>
-                    <!-- <div id="icon"><img src="../image/user.svg"></div> -->
-                    <!-- <div id="icon"><img src="../image/heart.svg"></div> -->
-                    <!-- <div id="icon"><img src="../image/search.svg"></div> -->
+                     <div id="icon">
+                        <a href="../HTML/cart.html">
+                            <img src="../image/shopping-cart.svg" class="cart-image">
+                            <span id="cart-count">0</span>
+                        </a>
+                    </div>
+
                     <div id="icon" class="icont"><img src="../image/truck.svg"></div>
-                    <div id="userHeader">
+                   <div id="userHeader">
                         <div id="icon"><a href="../html/orders.html"></a><img src="../image/user.svg"></div>
                         <span id="usernameOR"></span>
                     </div>
@@ -44,13 +46,14 @@
         </div>
         <div id="totalPrice">סה״כ לתשלום: 0 ₪</div>
         <div id="shippingCost" style="margin-top: 10px; font-weight: 600; color: #8b0000;"></div>
-<div id="finalTotal" style="margin-top: 5px; font-weight: 700; font-size: 1.3rem; color: #8b0000;"></div>
+        <div id="finalTotal" style="margin-top: 5px; font-weight: 700; font-size: 1.3rem; color: #8b0000;"></div>
 
         <button id="checkout-btn">סיכום ותשלום</button>
-       
+
 
     </main>
     <script src="../Javascipt/cart.js" defer></script>
+    <script src="../Javascipt/connection.js" defer></script>
 </body>
 
 </html>
