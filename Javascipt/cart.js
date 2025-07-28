@@ -32,7 +32,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 document.addEventListener('DOMContentLoaded', () => {
-   updateTotals();
+  updateTotals();
   const cart = JSON.parse(sessionStorage.getItem('cart')) || []; // שחק את העגלה מה-local storage, או ריק
   const cartItemsContainer = document.getElementById('cartItems');
   if (cartItemsContainer) {
@@ -132,7 +132,7 @@ function ToPay() {
   document.getElementById("payment-form").addEventListener("submit", (e) => {
     e.preventDefault();
     alert("התשלום התקבל בהצלחה!");
-    window.location.href = "Pay.html"; // מעבר לדף אחר
+    window.location.href = "Main.html"; // מעבר לדף אחר
     document.getElementById("popup").classList.add("hidden");
   });
 
@@ -230,4 +230,61 @@ function updateTotals() {
 }
 
 
+let pro = JSON.parse(localStorage.getItem('pro')) || [];
 
+function addNewProduct() {
+  const name = document.getElementById("inputProductName").value.trim();
+  const price = document.getElementById("inputProductPrice").value.trim();
+  const imageUrl = document.getElementById("inputProductImage").value.trim();
+
+  if (!name || !price || !imageUrl) {
+    alert("אנא מלאי את כל השדות");
+    return;
+  }
+
+  const obj = {
+    name: name,
+    price: price,
+    imageUrl: imageUrl
+  };
+
+  pro.push(obj);
+  localStorage.setItem('pro', JSON.stringify(pro));
+
+  addProductToDOM(obj);
+
+  // ניקוי השדות
+  document.getElementById("inputProductName").value = "";
+  document.getElementById("inputProductPrice").value = "";
+  document.getElementById("inputProductImage").value = "";
+
+  window.location.href="Main.html"
+}
+
+function addProductToDOM(product) {
+  const contain = document.getElementById("container");
+
+  contain.innerHTML += `
+    <div class="product">
+      <div class="img">
+        <a><img src="${product.imageUrl}" width="65%" height="auto" alt="${product.name}" class="Pimg"></a>
+        <div>
+          <h3 class="productName">${product.name}</h3>
+          <h4 class="price">${product.price}</h4>
+        </div>
+        <div>
+          <button onclick="addToCart(this)">הוספה לסל</button>
+        </div>
+      </div>
+    </div>`;
+}
+
+// פונקציה לטעינת כל המוצרים מה-localStorage בעת טעינת הדף
+function loadProducts() {
+  pro.forEach(product => {
+    addProductToDOM(product);
+  });
+}
+
+// לקרוא את loadProducts אחרי טעינת הדף
+window.onload = loadProducts;
