@@ -1157,3 +1157,21 @@ button#checkout-btn:hover {
   cursor: pointer;
   font-size: 1rem;
 }
+
+.plusIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 60px;
+  background: #6e6256; /* צבע תואם לרקע */
+  border-radius: 12px;
+  font-size: 32px;
+  font-weight: bold;
+  color: white;
+  cursor: pointer;
+}
+.plusIcon a {
+  color: inherit;
+  text-decoration: none;
+}

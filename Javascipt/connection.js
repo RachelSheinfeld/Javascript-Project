@@ -149,6 +149,22 @@ window.addEventListener("DOMContentLoaded", () => {
   if (usernameSpan) {
     usernameSpan.textContent = usernameOr;
   }
+
+ if (usernameOr === "admin" && leftHead) {
+    // יצירת ריבוע עם פלוס
+    const plusDiv = document.createElement("div");
+    plusDiv.id = "icon";
+    plusDiv.classList.add("plusIcon");
+
+    const plusLink = document.createElement("a");
+    plusLink.href = "../html/manager_Add.html";
+    plusLink.textContent = "+";
+
+    plusDiv.appendChild(plusLink);
+    leftHead.insertBefore(plusDiv, leftHead.firstChild); 
+    // מוסיף את הריבוע הראשון מצד שמאל
+  }
+    
 });
 
  
@@ -175,6 +191,7 @@ window.addEventListener("DOMContentLoaded", () => {
         });
     }
 });
+
 
 window.addEventListener("DOMContentLoaded", () => {
     // משיכת שם המשתמש מ-localStorage, אם קיים. אם לא, מציג "אורח".
