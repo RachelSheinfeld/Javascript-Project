@@ -108,7 +108,7 @@ if (loginForm) {
       case true:
         {
           alert('זוהיתם בהצלחה מייד תועברו למסך הבית');
-          localStorage.setItem('currentUser', exUser); // זו השורה שצריך להוסיף/לוודא קיומה
+          localStorage.setItem('currentUser', exUser); 
           window.location.href = 'Main.html';
 
           break;
@@ -169,31 +169,20 @@ document.addEventListener('DOMContentLoaded', function () {
 });
  
 window.addEventListener("DOMContentLoaded", () => {
-    // משיכת שם המשתמש מ-localStorage, אם קיים. אם לא, מציג "אורח".
     const usernameOr = localStorage.getItem("currentUser") || "אורח";
-    // הצבת שם המשתמש או "אורח" בתוך האלמנט עם ה-ID "usernameOR".
     document.getElementById("usernameOR").textContent = usernameOr;
 
-    // קבלת דיב הכותרת של המשתמש (זה שמכיל את האייקון ושם המשתמש).
     const userHeader = document.getElementById("userHeader");
 
-    // ודא שהאלמנט userHeader קיים בדף לפני שמנסים לצרף לו מאזין אירועים.
     if (userHeader) {
-        // הופך את סמן העכבר ליד כדי להעיד שהאלמנט לחיץ.
         userHeader.style.cursor = "pointer";
 
-        // הוספת מאזין אירועים ללחיצה על האלמנט.
         userHeader.addEventListener("click", () => {
-            // בדיקה אם משתמש מחובר (על ידי בדיקת קיום "currentUser" ב-localStorage).
             if (localStorage.getItem("currentUser")) {
-                // הצגת חלון אישור לשאול אם המשתמש רוצה להתנתק.
                 const confirmLogout = confirm("האם ברצונך להתנתק?");
-                // אם המשתמש אישר:
                 if (confirmLogout) {
-                    // מחיקת נתוני המשתמש מ-localStorage (בפועל, ניתוק).
                     localStorage.removeItem("currentUser");
                     alert("התנתקת בהצלחה.");
-                    // הפנייה לדף ההתחברות.
                     window.location.href = "connection.html";
                 }
             } else {
