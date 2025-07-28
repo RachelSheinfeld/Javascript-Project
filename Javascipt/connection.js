@@ -98,6 +98,7 @@ if (loginForm) {
         localStorage.setItem('currentUser', exUser);
         window.location.href = 'Main.html';
         break;
+
       case false:
         alert('שם משתמש או סיסמא שגויים');
         break;
@@ -148,6 +149,31 @@ window.addEventListener("DOMContentLoaded", () => {
   if (usernameSpan) {
     usernameSpan.textContent = usernameOr;
   }
+});
+
+ 
+window.addEventListener("DOMContentLoaded", () => {
+    const usernameOr = localStorage.getItem("currentUser") || "אורח";
+    document.getElementById("usernameOR").textContent = usernameOr;
+
+    const userHeader = document.getElementById("userHeader");
+
+    if (userHeader) {
+        userHeader.style.cursor = "pointer";
+
+        userHeader.addEventListener("click", () => {
+            if (localStorage.getItem("currentUser")) {
+                const confirmLogout = confirm("האם ברצונך להתנתק?");
+                if (confirmLogout) {
+                    localStorage.removeItem("currentUser");
+                    alert("התנתקת בהצלחה.");
+                    window.location.href = "connection.html";
+                }
+            } else {
+                window.location.href = "connection.html";
+            }
+        });
+    }
 });
 
 window.addEventListener("DOMContentLoaded", () => {
