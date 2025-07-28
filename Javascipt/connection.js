@@ -168,18 +168,44 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 });
  
-window.addEventListener("DOMContentLoaded",()=>{
-  const usernameOr=localStorage.getItem("currentUser")||"אורח";
-  document.getElementById("usernameOR").textContent=usernameOr;
-  // לטיםול אחכ בהזמנות של הלקוח אפשר לשנות את הקוד
-  const orders=[
-  ];
-  const list=document.getElementById("orderList")
-  orders.forEach(order=>{
-    const li=document.createElement("li")
-    li.textContent=order;
-    list.appendChild(li);
-  })
-})
+window.addEventListener("DOMContentLoaded", () => {
+    // משיכת שם המשתמש מ-localStorage, אם קיים. אם לא, מציג "אורח".
+    const usernameOr = localStorage.getItem("currentUser") || "אורח";
+    const usernameOrElement = document.getElementById("usernameOR"); // קבלת האלמנט פעם אחת
+    usernameOrElement.textContent = usernameOr;
+
+    const orders = [
+        // מערך ההזמנות שלך, אם קיים, ילך לכאן
+    ];
+
+    const list = document.getElementById("orderList");
+    orders.forEach(order => {
+        const li = document.createElement("li");
+        li.textContent = order;
+        list.appendChild(li);
+    });
+
+    // --- לוגיקת התנתקות/הפניה חדשה ---
+    // קבלת דיב הכותרת של המשתמש, או ישירות את הספאן של האייקון/שם המשתמש
+    const userHeader = document.getElementById("userHeader");
+    if (userHeader) {
+        userHeader.style.cursor = "pointer"; // הפוך את הסמן ליד כדי שיהיה ברור שזה לחיץ
+
+        userHeader.addEventListener("click", () => {
+            if (localStorage.getItem("currentUser")) { // אם משתמש מחובר
+                const confirmLogout = confirm("האם ברצונך להתנתק?"); // שאל אישור
+                if (confirmLogout) {
+                    localStorage.removeItem("currentUser"); // נקה את נתוני המשתמש (שם המשתמש)
+                    // אופציונלי, נקה נתונים ספציפיים אחרים למשתמש מ-localStorage אם קיימים
+                    // localStorage.removeItem("userOrders");
+                    alert("התנתקת בהצלחה.");
+                    window.location.href = "connection.html"; // הפנה לדף ההתחברות
+                }
+            } else { // אם אין משתמש מחובר (usernameOr הוא "אורח")
+                window.location.href = "connection.html"; // הפנה ישירות לדף ההתחברות
+            }
+        });
+    }
+});
 
 
